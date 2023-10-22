@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <main>
-    <h1>Welcome</h1>
-  </main>
+  <div>
+    <h1>Rent Page</h1>
+  </div>
 </template>

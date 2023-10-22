@@ -1,7 +1,8 @@
+RentView
 <script setup></script>
 
 <template>
-  <main>
-    <h1>Welcome</h1>
-  </main>
+  <div>
+    <h1>Buy Page</h1>
+  </div>
 </template>
