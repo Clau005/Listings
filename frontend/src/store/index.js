@@ -3,7 +3,7 @@ import axiosClient from '../axios'
 const store = createStore({
   state: {
     user: {
-      date: {},
+      data: {},
       token: sessionStorage.getItem('TOKEN')
     }
   },
@@ -14,6 +14,12 @@ const store = createStore({
         commit('setUser', data.user)
         commit('setToken', data.token)
         return data
+      })
+    },
+    getUser({ commit }) {
+      return axiosClient.get('/user').then((res) => {
+        console.log(res.data, 'res data set user')
+        commit('setUser', res.data)
       })
     }
   },

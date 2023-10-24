@@ -1,6 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import store from '../../store'
+
 const router = useRouter()
 
 const user = {
@@ -13,9 +14,10 @@ const user = {
 
 const handleRegistration = (event) => {
   event.preventDefault()
-  store.dispatch('register', user).then(() => {
+  store.dispatch('register', user).then((res) => {
+    console.log(res)
     router.push({
-      name: 'Dashboard'
+      name: 'Listings'
     })
   })
 }
