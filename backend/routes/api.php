@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,12 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
     Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('/listing/create', [ListingController::class, 'store']);
 });
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/listing ', [ListingController::class, 'index']);
+Route::get('/listing/random ', [ListingController::class, 'getRandomListings']);
+Route::get('/listing/listings-by-location ', [ListingController::class, 'getListingsByLocation']);
