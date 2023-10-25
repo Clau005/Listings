@@ -56,12 +56,12 @@ export default {
 
 <template>
   <div class="min-h-full w-full">
-    <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <Disclosure as="nav" class="bg-white" v-slot="{ open }">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-indigo-950">
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <a href="/" class="text-2xl text-indigo-200 font-bold text-center">LIST.IT!</a>
+              <a href="/" class="text-4xl text-indigo-900 font-bold text-center">LIST.IT!</a>
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
@@ -71,10 +71,8 @@ export default {
                   :to="item.to"
                   active-class="bg-gray-900 text-white"
                   :class="[
-                    this.$route.name === item.to.name
-                      ? ''
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'rounded-md px-3 py-2 text-sm font-medium'
+                    this.$route.name === item.to.name ? '' : ' hover:bg-gray-700 hover:text-white',
+                    'text-xl rounded-md px-3 py-2 font-medium'
                   ]"
                 >
                   {{ item.name }}
@@ -86,11 +84,11 @@ export default {
             <div class="ml-4 flex items-center md:ml-6">
               <button
                 type="button"
-                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                class="relative rounded-full bg-gray-800 p-1 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               >
                 <span class="absolute -inset-1.5" />
                 <span class="sr-only">View notifications</span>
-                <BellIcon class="h-6 w-6" aria-hidden="true" />
+                <BellIcon class="h-6 w-6 text-gray-200" aria-hidden="true" />
               </button>
 
               <!-- Profile dropdown -->
@@ -169,7 +167,7 @@ export default {
             </div>
             <button
               type="button"
-              class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-indigo-950 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
             >
               <span class="absolute -inset-1.5" />
               <span class="sr-only">View notifications</span>

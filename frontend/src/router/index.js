@@ -9,6 +9,7 @@ import BuyView from '../views/BuyView.vue'
 import SellView from '../views/SellView.vue'
 import RentView from '../views/RentView.vue'
 import ListingCreate from '../views/ListingCreate.vue'
+import RentByLocation from '../views/RentByLocation.vue'
 
 const routes = [
   {
@@ -59,6 +60,11 @@ const routes = [
         path: '/rent',
         name: 'Rent',
         component: RentView
+      },
+      {
+        path: '/rent/by-location/:location',
+        name: 'Rent-By-Location',
+        component: RentByLocation
       },
       {
         path: '/listing/create',

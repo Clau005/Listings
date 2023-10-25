@@ -35,8 +35,8 @@ class ListingController extends Controller
      * Return listings by location
      */
 
-     public function getListingsByLocation(Request $request, string $locationId) {
-        $listingsByLocation = Listing::where('location_id', $locationId)->get();
+     public function getListingsByLocation(Request $request, string $location) {
+        $listingsByLocation = Listing::where('location', $location)->get();
         return ListingResource::collection($listingsByLocation);
      }
 

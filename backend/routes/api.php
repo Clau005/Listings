@@ -29,4 +29,4 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/listing ', [ListingController::class, 'index']);
 Route::get('/listing/random ', [ListingController::class, 'getRandomListings']);
-Route::get('/listing/listings-by-location ', [ListingController::class, 'getListingsByLocation']);
+Route::get('/listing/listings-by-location/{location}', [ListingController::class, 'getListingsByLocation']);

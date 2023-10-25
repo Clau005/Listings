@@ -19,8 +19,14 @@ class ListingResource extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
             'status' => $this->status,
-            'user_id' => $this->status,
-            'image' => $this->image
+            'user_id' => $this->user_id,
+            'image' => $this->image,
+            'location' => $this->location,
+            'beds' => $this->beds,
+            'baths' => $this->baths,
+            'property_type' => $this->property_type,
+            'price' => $this->price,
+            'floor' => $this->floor
         ];
     }
 }
