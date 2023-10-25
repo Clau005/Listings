@@ -12,6 +12,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import SearchNavigation from '../core/SearchNavigation.vue'
 
 const navigation = [
   { name: 'MySpace', to: { name: 'MySpace' } },
@@ -31,7 +32,8 @@ export default {
     MenuItems,
     Bars3Icon,
     BellIcon,
-    XMarkIcon
+    XMarkIcon,
+    SearchNavigation
   },
   setup() {
     const store = useStore()
@@ -186,6 +188,7 @@ export default {
         </div>
       </DisclosurePanel>
     </Disclosure>
+    <SearchNavigation />
 
     <div class="w-[90%] m-auto">
       <router-view></router-view>

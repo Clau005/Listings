@@ -1,8 +1,13 @@
 <script setup>
-import { onMounted, ref, watch, computed } from 'vue'
+import {
+  onMounted,
+  ref,
+  //  watch,
+  computed
+} from 'vue'
 import axios from 'axios'
 import { useStore } from 'vuex'
-
+import ListingComponent from '../components/core/ListingComponent.vue'
 console.log('test')
 
 const store = useStore()
@@ -12,7 +17,7 @@ store.dispatch('getUser')
 console.log(user.value.email, 'user')
 
 const randomListings = ref([])
-const fitlered = ref([])
+// const fitlered = ref([])
 
 const getRandomListings = async () => {
   try {
@@ -27,16 +32,17 @@ const getRandomListings = async () => {
 }
 
 onMounted(getRandomListings)
-watch(() => {
-  // console.log('run')
-  fitlered.value = randomListings.value.filter((listing) => listing.title === 'Random Title 851')
-}, [])
-
-// console.log(fitlered, 'filteredListing listings')
+// watch(() => {
+//   // console.log('run')
+//   fitlered.value = randomListings.value.filter((listing) => listing.title === 'Random Title 851')
+// }, [])
 </script>
 
 <template>
   <div>
-    <h1>Listings {{ user.email }}</h1>
+    <h1>Listings {{ user.email }} image: {{ randomListings }}</h1>
+    <div v-for="listing in randomListings" :key="listing.id" class="">
+      <ListingComponent :img-url="listing.image" class="mb-8" />
+    </div>
   </div>
 </template>
