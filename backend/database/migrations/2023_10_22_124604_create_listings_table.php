@@ -18,6 +18,13 @@ return new class extends Migration
             $table->string('status')->default('OPEN');
             $table->foreignIdFor(App\Models\User::class,  'user_id');
             $table->timestamps();
+            $table->string('location');
+            $table->integer('beds');
+            $table->integer('baths');
+            $table->integer('price');
+            $table->string('floor')->nullable();
+            $table->string('property_type');
+            $table->string('image', 255);
         });
     }
 
